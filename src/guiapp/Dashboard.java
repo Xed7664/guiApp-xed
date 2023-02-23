@@ -165,7 +165,8 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dashpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseClicked
-        // TODO add your handling code here:
+        dbpage down = new dbpage();
+        dtop.add(down).setVisible(true);
     }//GEN-LAST:event_dashpaneMouseClicked
 
     private void dashpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseEntered
