@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package guiapp;
+import internalPages.dasb;
 import java.awt.Color; 
 import internalPages.*;
 /**
@@ -38,10 +39,16 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         userpane1 = new javax.swing.JPanel();
         userpane = new javax.swing.JLabel();
-        reportpane = new javax.swing.JPanel();
+        main = new javax.swing.JPanel();
         userpane3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         dtop = new javax.swing.JDesktopPane();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,7 +77,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1.setText("DASHBOARD");
         dashpane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 20));
 
-        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 140, 40));
+        navbar.add(dashpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, 40));
 
         userpane1.setBackground(new java.awt.Color(153, 0, 51));
         userpane1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -91,43 +98,55 @@ public class Dashboard extends javax.swing.JFrame {
         userpane.setText("USER PAGE");
         userpane1.add(userpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 20));
 
-        navbar.add(userpane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, 40));
+        navbar.add(userpane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 140, 40));
 
-        reportpane.setBackground(new java.awt.Color(153, 0, 51));
-        reportpane.addMouseListener(new java.awt.event.MouseAdapter() {
+        main.setBackground(new java.awt.Color(153, 0, 51));
+        main.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                reportpaneMouseClicked(evt);
+                mainMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                reportpaneMouseEntered(evt);
+                mainMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                reportpaneMouseExited(evt);
+                mainMouseExited(evt);
             }
         });
-        reportpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        main.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         userpane3.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         userpane3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userpane3.setText("REPORTS");
-        reportpane.add(userpane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 20));
+        userpane3.setText("MAIN PAGE");
+        main.add(userpane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 20));
 
-        navbar.add(reportpane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 140, 40));
+        navbar.add(main, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 140, 40));
+
+        jLabel2.setBackground(new java.awt.Color(153, 204, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logoao-removebg-preview.png"))); // NOI18N
+        navbar.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 160));
 
         jPanel1.add(navbar);
         navbar.setBounds(0, 0, 140, 410);
 
         header.setBackground(new java.awt.Color(0, 51, 102));
 
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Real Estate page banner (1).jpg"))); // NOI18N
+
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
         headerLayout.setHorizontalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerLayout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 629, Short.MAX_VALUE)
+                .addContainerGap())
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(headerLayout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel1.add(header);
@@ -135,15 +154,51 @@ public class Dashboard extends javax.swing.JFrame {
 
         dtop.setBackground(new java.awt.Color(153, 204, 255));
 
+        jLabel4.setFont(new java.awt.Font("Wide Latin", 1, 24)); // NOI18N
+        jLabel4.setText("REAL-ESTATE ");
+
+        jLabel5.setFont(new java.awt.Font("Wide Latin", 1, 24)); // NOI18N
+        jLabel5.setText("RECORDING APP");
+
+        jLabel6.setFont(new java.awt.Font("Wide Latin", 1, 24)); // NOI18N
+        jLabel6.setText("PROPERTY ");
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/pngtree-creative-synthesis-city-comic-real-estate-picture-image_916360-removebg-preview.png"))); // NOI18N
+
+        dtop.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        dtop.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        dtop.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        dtop.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout dtopLayout = new javax.swing.GroupLayout(dtop);
         dtop.setLayout(dtopLayout);
         dtopLayout.setHorizontalGroup(
             dtopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(dtopLayout.createSequentialGroup()
+                .addGroup(dtopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dtopLayout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel4))
+                    .addGroup(dtopLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel5))
+                    .addGroup(dtopLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel6)))
+                .addContainerGap(136, Short.MAX_VALUE))
+            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         dtopLayout.setVerticalGroup(
             dtopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(dtopLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel1.add(dtop);
@@ -165,12 +220,13 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dashpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseClicked
-        dbpage down = new dbpage();
+      bor down = new bor();
         dtop.add(down).setVisible(true);
     }//GEN-LAST:event_dashpaneMouseClicked
 
     private void dashpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseEntered
-       dashpane.setBackground(bodycolor);
+    
+        dashpane.setBackground(bodycolor);
     }//GEN-LAST:event_dashpaneMouseEntered
 
     private void dashpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashpaneMouseExited
@@ -190,17 +246,19 @@ public class Dashboard extends javax.swing.JFrame {
         userpane1.setBackground(navcolor);
     }//GEN-LAST:event_userpane1MouseExited
 
-    private void reportpaneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportpaneMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_reportpaneMouseClicked
+    private void mainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainMouseClicked
+              main down = new main();
+        dtop.add(down).setVisible(true);
+       
+    }//GEN-LAST:event_mainMouseClicked
 
-    private void reportpaneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportpaneMouseEntered
-        reportpane.setBackground(bodycolor);
-    }//GEN-LAST:event_reportpaneMouseEntered
+    private void mainMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainMouseEntered
+        main.setBackground(bodycolor);
+    }//GEN-LAST:event_mainMouseEntered
 
-    private void reportpaneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportpaneMouseExited
-        reportpane.setBackground(navcolor);
-    }//GEN-LAST:event_reportpaneMouseExited
+    private void mainMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainMouseExited
+        main.setBackground(navcolor);
+    }//GEN-LAST:event_mainMouseExited
 
     /**
      * @param args the command line arguments
@@ -239,12 +297,18 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dashpane;
-    private javax.swing.JDesktopPane dtop;
+    public static javax.swing.JDesktopPane dtop;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel main;
     private javax.swing.JPanel navbar;
-    private javax.swing.JPanel reportpane;
     private javax.swing.JLabel userpane;
     private javax.swing.JPanel userpane1;
     private javax.swing.JLabel userpane3;
