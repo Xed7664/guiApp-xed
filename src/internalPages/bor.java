@@ -5,8 +5,11 @@
  */
 package internalPages;
 
+import static guiapp.Dashboard.dtop;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import side.NewJFrame;
+import side.inter;
 
 
 /**
@@ -27,7 +30,7 @@ public class bor extends javax.swing.JInternalFrame {
     
     Color navcolor = new Color(153,0,51);
  Color headcolor = new Color(0,51,102);
- Color bodycolor = new Color(0,204,204);  
+ Color bodycolor = new Color(153,153,255);  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +45,6 @@ public class bor extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         v = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -53,12 +55,13 @@ public class bor extends javax.swing.JInternalFrame {
         m = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(651, 350));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(null);
 
         jPanel3.setBackground(new java.awt.Color(153, 0, 51));
@@ -70,17 +73,11 @@ public class bor extends javax.swing.JInternalFrame {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(460, 0, 150, 150);
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel1.setText("REAL-ESTATE PROPERTY RECORDING APP");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 0, 350, 50);
-
-        jLabel2.setFont(new java.awt.Font("Yu Gothic", 1, 10)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ADDITIONAL  SYSTEM DESCRIPTION");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 50, 200, 20);
+        jLabel1.setBounds(20, 40, 430, 50);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(-1, 0, 630, 150);
@@ -88,8 +85,11 @@ public class bor extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(0, 204, 204));
         jPanel2.setLayout(null);
 
-        v.setBackground(new java.awt.Color(0, 204, 204));
+        v.setBackground(new java.awt.Color(153, 153, 255));
         v.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 vMouseEntered(evt);
             }
@@ -107,10 +107,13 @@ public class bor extends javax.swing.JInternalFrame {
         v.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, -1));
 
         jPanel2.add(v);
-        v.setBounds(430, 50, 100, 90);
+        v.setBounds(230, 50, 100, 90);
 
-        a.setBackground(new java.awt.Color(0, 204, 204));
+        a.setBackground(new java.awt.Color(153, 153, 255));
         a.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 aMouseEntered(evt);
             }
@@ -129,10 +132,13 @@ public class bor extends javax.swing.JInternalFrame {
         a.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 90, -1));
 
         jPanel2.add(a);
-        a.setBounds(230, 50, 110, 90);
+        a.setBounds(50, 50, 110, 90);
 
-        m.setBackground(new java.awt.Color(0, 204, 204));
+        m.setBackground(new java.awt.Color(153, 153, 255));
         m.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 mMouseEntered(evt);
             }
@@ -150,7 +156,11 @@ public class bor extends javax.swing.JInternalFrame {
         m.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 20));
 
         jPanel2.add(m);
-        m.setBounds(50, 50, 100, 90);
+        m.setBounds(390, 50, 100, 90);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/background-blue-circle-pattern-abstract-design-texture-wallpaperyss.jpg"))); // NOI18N
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(0, 0, 630, 200);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(-4, 150, 630, 210);
@@ -183,6 +193,21 @@ public class bor extends javax.swing.JInternalFrame {
     private void mMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mMouseExited
         m.setBackground(bodycolor);
     }//GEN-LAST:event_mMouseExited
+
+    private void aMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseClicked
+       add down = new add();
+        dtop.add(down).setVisible(true);
+    }//GEN-LAST:event_aMouseClicked
+
+    private void vMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vMouseClicked
+         view down = new view();
+        dtop.add(down).setVisible(true);
+    }//GEN-LAST:event_vMouseClicked
+
+    private void mMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mMouseClicked
+      Record down = new Record();
+        dtop.add(down).setVisible(true);
+    }//GEN-LAST:event_mMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
