@@ -50,8 +50,6 @@ public class view extends javax.swing.JInternalFrame {
         back = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         BG = new javax.swing.JLabel();
 
         header.setBackground(new java.awt.Color(0, 51, 102));
@@ -88,16 +86,6 @@ public class view extends javax.swing.JInternalFrame {
 
         header.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 80, 590, 100));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Delete");
-        header.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 90, 30));
-
-        jButton2.setBackground(new java.awt.Color(153, 153, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setText("Update");
-        header.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 100, 30));
-
         BG.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
         BG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Real Estate page banner (1).jpg"))); // NOI18N
@@ -130,8 +118,6 @@ public class view extends javax.swing.JInternalFrame {
     private javax.swing.JLabel BG;
     private javax.swing.JLabel back;
     private javax.swing.JPanel header;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTable jTable1;

@@ -6,6 +6,7 @@
 package internalPages;
 
 import static guiapp.Dashboard.dtop;
+import guiapp.rep;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import side.NewJFrame;
@@ -43,8 +44,9 @@ public class bor extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         v = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -55,7 +57,6 @@ public class bor extends javax.swing.JInternalFrame {
         m = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(651, 350));
@@ -67,11 +68,12 @@ public class bor extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(153, 0, 51));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/logoao-removebg-preview.png"))); // NOI18N
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 150));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-profile-100.png"))); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 110));
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(460, 0, 150, 150);
+        jPanel3.setBounds(470, 10, 120, 110);
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
@@ -79,10 +81,15 @@ public class bor extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(20, 40, 430, 50);
 
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("Admin");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(510, 120, 50, 17);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(-1, 0, 630, 150);
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 51, 51));
         jPanel2.setLayout(null);
 
         v.setBackground(new java.awt.Color(153, 153, 255));
@@ -158,10 +165,6 @@ public class bor extends javax.swing.JInternalFrame {
         jPanel2.add(m);
         m.setBounds(390, 50, 100, 90);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/background-blue-circle-pattern-abstract-design-texture-wallpaperyss.jpg"))); // NOI18N
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(0, 0, 630, 200);
-
         getContentPane().add(jPanel2);
         jPanel2.setBounds(-4, 150, 630, 210);
 
@@ -195,8 +198,9 @@ public class bor extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_mMouseExited
 
     private void aMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseClicked
-       add down = new add();
-        dtop.add(down).setVisible(true);
+       rep b= new rep ();
+        b.setVisible(true);
+        b.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE); 
     }//GEN-LAST:event_aMouseClicked
 
     private void vMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vMouseClicked

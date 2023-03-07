@@ -48,7 +48,10 @@ public class add extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         BG = new javax.swing.JLabel();
+
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         header.setBackground(new java.awt.Color(0, 51, 102));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -104,6 +107,7 @@ public class add extends javax.swing.JInternalFrame {
             }
         });
         header.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 70, 30));
+        header.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 210, 310));
 
         BG.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
         BG.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -111,16 +115,7 @@ public class add extends javax.swing.JInternalFrame {
         BG.setText("jbkmnb");
         header.add(BG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 370));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 374));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,6 +149,7 @@ public class add extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField meter;
     // End of variables declaration//GEN-END:variables

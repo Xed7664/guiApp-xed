@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package guiapp;
-import internalPages.dasb;
+
 import java.awt.Color; 
 import internalPages.*;
 /**

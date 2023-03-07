@@ -34,16 +34,28 @@ public class Record extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         header = new javax.swing.JPanel();
+        add = new javax.swing.JButton();
         back = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        add1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         BG = new javax.swing.JLabel();
 
         header.setBackground(new java.awt.Color(0, 51, 102));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        add.setBackground(new java.awt.Color(0, 0, 0));
+        add.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        add.setForeground(new java.awt.Color(255, 255, 255));
+        add.setText("Archive");
+        add.setBorder(null);
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        header.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 70, 30));
 
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-left-30.png"))); // NOI18N
         back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -55,18 +67,20 @@ public class Record extends javax.swing.JInternalFrame {
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Seller's Contact Information");
-        header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 250, 20));
+        jLabel1.setText("Sold Properties");
+        header.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 150, 20));
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setText("Update");
-        header.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 100, 30));
-
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Delete");
-        header.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 90, 30));
+        add1.setBackground(new java.awt.Color(0, 0, 0));
+        add1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        add1.setForeground(new java.awt.Color(255, 255, 255));
+        add1.setText("Delete");
+        add1.setBorder(null);
+        add1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add1ActionPerformed(evt);
+            }
+        });
+        header.add(add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 70, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -111,13 +125,23 @@ public class Record extends javax.swing.JInternalFrame {
         dtop.add(down).setVisible(true);
     }//GEN-LAST:event_backMouseClicked
 
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        // Add Button
+       
+    }//GEN-LAST:event_addActionPerformed
+
+    private void add1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add1ActionPerformed
+    
+
+    }//GEN-LAST:event_add1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BG;
+    private javax.swing.JButton add;
+    private javax.swing.JButton add1;
     private javax.swing.JLabel back;
     private javax.swing.JPanel header;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
