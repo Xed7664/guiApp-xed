@@ -6,6 +6,7 @@
 package internalPages;
 
 import static guiapp.Dashboard.dtop;
+import guiapp.log;
 import guiapp.rep;
 import java.awt.Color;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -51,12 +52,14 @@ public class bor extends javax.swing.JInternalFrame {
         v = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        a = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         m = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        n = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        v1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(651, 350));
@@ -114,32 +117,7 @@ public class bor extends javax.swing.JInternalFrame {
         v.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, -1));
 
         jPanel2.add(v);
-        v.setBounds(230, 50, 100, 90);
-
-        a.setBackground(new java.awt.Color(153, 153, 255));
-        a.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                aMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                aMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                aMouseExited(evt);
-            }
-        });
-        a.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-add-properties-50.png"))); // NOI18N
-        a.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 60, 50));
-
-        jLabel6.setFont(new java.awt.Font("Yu Gothic", 1, 10)); // NOI18N
-        jLabel6.setText("Add Properties");
-        a.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 90, -1));
-
-        jPanel2.add(a);
-        a.setBounds(50, 50, 110, 90);
+        v.setBounds(100, 50, 100, 90);
 
         m.setBackground(new java.awt.Color(153, 153, 255));
         m.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,7 +141,74 @@ public class bor extends javax.swing.JInternalFrame {
         m.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 20));
 
         jPanel2.add(m);
-        m.setBounds(390, 50, 100, 90);
+        m.setBounds(250, 50, 100, 90);
+
+        n.setBackground(new java.awt.Color(153, 153, 255));
+        n.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nMouseExited(evt);
+            }
+        });
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-log-out-32.png"))); // NOI18N
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel10MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout nLayout = new javax.swing.GroupLayout(n);
+        n.setLayout(nLayout);
+        nLayout.setHorizontalGroup(
+            nLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        nLayout.setVerticalGroup(
+            nLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(n);
+        n.setBounds(560, 140, 40, 40);
+
+        v1.setBackground(new java.awt.Color(153, 153, 255));
+        v1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                v1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                v1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                v1MouseExited(evt);
+            }
+        });
+        v1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/icons8-automatic-50.png"))); // NOI18N
+        v1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 50));
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic", 1, 10)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Settings ");
+        v1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 80, -1));
+
+        jPanel2.add(v1);
+        v1.setBounds(400, 50, 100, 90);
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(-4, 150, 630, 210);
@@ -179,16 +224,6 @@ public class bor extends javax.swing.JInternalFrame {
         v.setBackground(bodycolor);
     }//GEN-LAST:event_vMouseExited
 
-    private void aMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseEntered
-        a.setBackground(headcolor);
-
-    }//GEN-LAST:event_aMouseEntered
-
-    private void aMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseExited
-
-        a.setBackground(bodycolor);
-    }//GEN-LAST:event_aMouseExited
-
     private void mMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mMouseEntered
         m.setBackground(headcolor);
     }//GEN-LAST:event_mMouseEntered
@@ -196,12 +231,6 @@ public class bor extends javax.swing.JInternalFrame {
     private void mMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mMouseExited
         m.setBackground(bodycolor);
     }//GEN-LAST:event_mMouseExited
-
-    private void aMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseClicked
-       rep b= new rep ();
-        b.setVisible(true);
-        b.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE); 
-    }//GEN-LAST:event_aMouseClicked
 
     private void vMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vMouseClicked
          view down = new view();
@@ -213,10 +242,52 @@ public class bor extends javax.swing.JInternalFrame {
         dtop.add(down).setVisible(true);
     }//GEN-LAST:event_mMouseClicked
 
+    private void jLabel10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseEntered
+        n.setBackground(headcolor);
+    }//GEN-LAST:event_jLabel10MouseEntered
+
+    private void nMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nMouseExited
+        n.setBackground(bodycolor);
+    }//GEN-LAST:event_nMouseExited
+
+    private void nMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nMouseEntered
+        n.setBackground(headcolor);
+    }//GEN-LAST:event_nMouseEntered
+
+    private void nMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nMouseClicked
+       log b= new log ();
+        b.setVisible(true);
+         b.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE); 
+    }//GEN-LAST:event_nMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+
+        this.dispose();
+        log b= new log ();
+        b.setVisible(true);
+         
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseExited
+        n.setBackground(bodycolor);
+    }//GEN-LAST:event_jLabel10MouseExited
+
+    private void v1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_v1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_v1MouseClicked
+
+    private void v1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_v1MouseEntered
+       v1.setBackground(headcolor);
+    }//GEN-LAST:event_v1MouseEntered
+
+    private void v1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_v1MouseExited
+        v1.setBackground(bodycolor);
+    }//GEN-LAST:event_v1MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel a;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -229,6 +300,8 @@ public class bor extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel m;
+    private javax.swing.JPanel n;
     private javax.swing.JPanel v;
+    private javax.swing.JPanel v1;
     // End of variables declaration//GEN-END:variables
 }

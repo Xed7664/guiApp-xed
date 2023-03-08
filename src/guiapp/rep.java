@@ -7,6 +7,7 @@ package guiapp;
 
 import static guiapp.Dashboard.dtop;
 import internalPages.bor;
+import internalPages.main;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -277,7 +278,7 @@ public class rep extends javax.swing.JFrame {
     }//GEN-LAST:event_priceActionPerformed
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
-        bor down = new bor();
+        main down = new main();
         dtop.add(down).setVisible(true);
         down.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE); 
     }//GEN-LAST:event_backMouseClicked
