@@ -278,9 +278,9 @@ public class rep extends javax.swing.JFrame {
     }//GEN-LAST:event_priceActionPerformed
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
-        main down = new main();
-        dtop.add(down).setVisible(true);
-        down.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE); 
+        Dashboard down = new Dashboard();
+        down.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_backMouseClicked
 
     private void addressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressActionPerformed

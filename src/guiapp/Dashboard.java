@@ -308,9 +308,12 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseExited
 
     private void aMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseClicked
-        rep b= new rep ();
+      /*  rep b= new rep ();
         b.setVisible(true);
-        b.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE);
+        b.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE);*/
+      rep r=new rep();
+      r.setVisible(true);
+      this.dispose();
     }//GEN-LAST:event_aMouseClicked
 
     private void aMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aMouseEntered

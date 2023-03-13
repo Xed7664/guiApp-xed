@@ -257,14 +257,15 @@ public class bor extends javax.swing.JInternalFrame {
     private void nMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nMouseClicked
        log b= new log ();
         b.setVisible(true);
-         b.setDefaultCloseOperation(rep.DISPOSE_ON_CLOSE); 
+         this.dispose();
     }//GEN-LAST:event_nMouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
 
-        this.dispose();
+       
         log b= new log ();
         b.setVisible(true);
+        this.dispose();
          
     }//GEN-LAST:event_jLabel10MouseClicked
 

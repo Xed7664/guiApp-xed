@@ -71,14 +71,14 @@ public class log extends javax.swing.JFrame {
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 80, 30));
 
         jTextField1.setBackground(new java.awt.Color(0, 51, 51));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setBorder(null);
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 104, 270, 32));
 
         jPasswordField1.setBackground(new java.awt.Color(0, 51, 51));
-        jPasswordField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPasswordField1.setBorder(null);
@@ -165,7 +165,7 @@ public class log extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String user =jTextField1.getText();
         String pass =jPasswordField1.getText();
-        if(user.equals("Admin")&&pass.equals("123456")){
+        if(user.equals("")&&pass.equals("")){
             JOptionPane.showMessageDialog(null,"SUCCESS");
            Dashboard nf= new Dashboard ();
             nf.setVisible(true);
