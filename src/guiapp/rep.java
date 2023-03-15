@@ -5,18 +5,25 @@
  */
 package guiapp;
 
-import static guiapp.Dashboard.dtop;
-import internalPages.bor;
-import internalPages.main;
+import compig.db_configuration;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
  * @author ortega
  */
 public class rep extends javax.swing.JFrame {
-
+public void fillTable() throws SQLException{
+        
+        db_configuration dbc = new db_configuration();
+        ResultSet rs = dbc.getData("SELECT*FROM tbl_student");
+       jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+        
+        }
      
     public rep() {
       
@@ -52,7 +59,9 @@ public class rep extends javax.swing.JFrame {
         address = new javax.swing.JTextField();
         up = new javax.swing.JButton();
         del = new javax.swing.JButton();
+        clear1 = new javax.swing.JButton();
         clear = new javax.swing.JButton();
+        clear2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,22 +79,6 @@ public class rep extends javax.swing.JFrame {
         jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 40, 20));
 
         jTable1.setBackground(new java.awt.Color(204, 204, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Address", "Square Meter", "Postal Code", "Prop. Price"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         jTable1.getTableHeader().setReorderingAllowed(false);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -215,17 +208,41 @@ public class rep extends javax.swing.JFrame {
 
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 640, 240));
 
+        clear1.setBackground(new java.awt.Color(0, 0, 0));
+        clear1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        clear1.setForeground(new java.awt.Color(255, 255, 255));
+        clear1.setText("Clear");
+        clear1.setBorder(null);
+        clear1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 70, 30));
+
         clear.setBackground(new java.awt.Color(0, 0, 0));
         clear.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         clear.setForeground(new java.awt.Color(255, 255, 255));
-        clear.setText("Clear");
+        clear.setText("Display");
         clear.setBorder(null);
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
             }
         });
-        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 70, 30));
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 70, 30));
+
+        clear2.setBackground(new java.awt.Color(0, 0, 0));
+        clear2.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        clear2.setForeground(new java.awt.Color(255, 255, 255));
+        clear2.setText("Save");
+        clear2.setBorder(null);
+        clear2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 70, 30));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Real Estate page banner (1).jpg"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 510));
@@ -265,12 +282,23 @@ public class rep extends javax.swing.JFrame {
     }//GEN-LAST:event_addActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        //Clear Button
+       
+        try {
+        fillTable();
+        
+        
+        
+        }catch(SQLException e){
+    
+    System.out.println("error is:"+e);
+    }
 
-        address.setText("");
+//Clear Button
+
+      /*  address.setText("");
         meter.setText("");
         code.setText("");
-        price.setText("");
+        price.setText("");*/
     }//GEN-LAST:event_clearActionPerformed
 
     private void priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceActionPerformed
@@ -336,6 +364,20 @@ public class rep extends javax.swing.JFrame {
        }
        }
     }//GEN-LAST:event_delActionPerformed
+
+    private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
+        address.setText("");
+        meter.setText("");
+        code.setText("");
+        price.setText("");
+    }//GEN-LAST:event_clear1ActionPerformed
+
+    private void clear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear2ActionPerformed
+        db_configuration dbc= new db_configuration();
+        dbc.insertData("INSERT INTO tbl_student(st_name,st_address,st_status,st_gender)VALUES('"+address.getText()+
+                "','"+meter.getText()+"','"+code.getText()+"','"+price.getText()+"')");
+        
+    }//GEN-LAST:event_clear2ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -351,6 +393,8 @@ public class rep extends javax.swing.JFrame {
     private javax.swing.JTextField address;
     private javax.swing.JLabel back;
     private javax.swing.JButton clear;
+    private javax.swing.JButton clear1;
+    private javax.swing.JButton clear2;
     private javax.swing.JTextField code;
     private javax.swing.JButton del;
     private javax.swing.JLabel jLabel1;
