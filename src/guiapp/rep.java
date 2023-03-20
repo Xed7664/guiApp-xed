@@ -5,11 +5,15 @@
  */
 package guiapp;
 
+import static com.sun.webkit.perf.WCFontPerfLogger.reset;
 import compig.db_configuration;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -20,10 +24,18 @@ public class rep extends javax.swing.JFrame {
 public void fillTable() throws SQLException{
         
         db_configuration dbc = new db_configuration();
-        ResultSet rs = dbc.getData("SELECT*FROM tbl_student");
+        ResultSet rs = dbc.getData("SELECT*FROM tbl_properties");
        jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         
         }
+public void reset(){
+ address.setText("");
+        meter.setText("");
+        code.setText("");
+        price.setText("");
+
+
+}
      
     public rep() {
       
@@ -61,6 +73,8 @@ public void fillTable() throws SQLException{
         del = new javax.swing.JButton();
         clear1 = new javax.swing.JButton();
         clear = new javax.swing.JButton();
+        clear3 = new javax.swing.JButton();
+        clear4 = new javax.swing.JButton();
         clear2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -86,6 +100,16 @@ public void fillTable() throws SQLException{
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("Address");
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("Square Meter");
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("Postal Code");
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setHeaderValue("Prop. Price");
+        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 43, 660, 130));
 
@@ -218,7 +242,7 @@ public void fillTable() throws SQLException{
                 clear1ActionPerformed(evt);
             }
         });
-        jPanel1.add(clear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 70, 30));
+        jPanel1.add(clear1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 70, 30));
 
         clear.setBackground(new java.awt.Color(0, 0, 0));
         clear.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -232,6 +256,30 @@ public void fillTable() throws SQLException{
         });
         jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 70, 30));
 
+        clear3.setBackground(new java.awt.Color(0, 0, 0));
+        clear3.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        clear3.setForeground(new java.awt.Color(255, 255, 255));
+        clear3.setText("Update");
+        clear3.setBorder(null);
+        clear3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 70, 30));
+
+        clear4.setBackground(new java.awt.Color(0, 0, 0));
+        clear4.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        clear4.setForeground(new java.awt.Color(255, 255, 255));
+        clear4.setText("Delete");
+        clear4.setBorder(null);
+        clear4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(clear4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, 70, 30));
+
         clear2.setBackground(new java.awt.Color(0, 0, 0));
         clear2.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         clear2.setForeground(new java.awt.Color(255, 255, 255));
@@ -242,7 +290,7 @@ public void fillTable() throws SQLException{
                 clear2ActionPerformed(evt);
             }
         });
-        jPanel1.add(clear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 70, 30));
+        jPanel1.add(clear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 70, 30));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Real Estate page banner (1).jpg"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 510));
@@ -292,6 +340,8 @@ public void fillTable() throws SQLException{
     
     System.out.println("error is:"+e);
     }
+        
+        reset();
 
 //Clear Button
 
@@ -374,10 +424,52 @@ public void fillTable() throws SQLException{
 
     private void clear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear2ActionPerformed
         db_configuration dbc= new db_configuration();
-        dbc.insertData("INSERT INTO tbl_student(st_name,st_address,st_status,st_gender)VALUES('"+address.getText()+
+        dbc.insertData("INSERT INTO tbl_properties(Address,Meter,Postal,Price)VALUES('"+address.getText()+
                 "','"+meter.getText()+"','"+code.getText()+"','"+price.getText()+"')");
         
     }//GEN-LAST:event_clear2ActionPerformed
+
+    private void clear3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear3ActionPerformed
+        db_configuration dbc = new db_configuration();
+        int num = dbc.updateData("UPDATE tbl_properties "
+                + "SET Meter = '"+meter.getText()+"', Postal='"+code.getText()+"', "
+                        + "Price ='"+price.getText()+"'"
+                                + "WHERE Address = '"+address.getText()+"'");
+       
+        if(num == 0){
+           
+        }else{
+           JOptionPane.showMessageDialog(null, "Updated Successfully!");
+            try {
+                fillTable();
+            } catch (SQLException ex) {
+                Logger.getLogger(rep.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           reset();
+        }
+    }//GEN-LAST:event_clear3ActionPerformed
+
+    private void clear4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear4ActionPerformed
+       int rowIndex = jTable1.getSelectedRow();
+       if(rowIndex < 0){
+           JOptionPane.showMessageDialog(null, "Please select a data first");
+       }else{
+            TableModel model = jTable1.getModel();
+            Object value = model.getValueAt(rowIndex, 0);
+            String id = value.toString();
+             int a=JOptionPane.showConfirmDialog(null,"Are you sure?");  
+                    if(a==JOptionPane.YES_OPTION){  
+                            db_configuration dbc = new db_configuration();
+                            dbc.deleteData(jTable1.getSelectedRow());
+                try {
+                    fillTable();
+                } catch (SQLException ex) {
+                    Logger.getLogger(rep.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                            reset();
+                    }    
+       }
+    }//GEN-LAST:event_clear4ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -395,6 +487,8 @@ public void fillTable() throws SQLException{
     private javax.swing.JButton clear;
     private javax.swing.JButton clear1;
     private javax.swing.JButton clear2;
+    private javax.swing.JButton clear3;
+    private javax.swing.JButton clear4;
     private javax.swing.JTextField code;
     private javax.swing.JButton del;
     private javax.swing.JLabel jLabel1;
