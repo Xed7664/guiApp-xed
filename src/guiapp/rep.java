@@ -29,6 +29,8 @@ public void fillTable() throws SQLException{
         
         }
 public void reset(){
+    
+    id.setText("");
  address.setText("");
         meter.setText("");
         code.setText("");
@@ -60,6 +62,8 @@ public void reset(){
         jTable1 = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         addi = new javax.swing.JPanel();
+        id = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -116,28 +120,46 @@ public void reset(){
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 255));
         jTabbedPane1.setBorder(new javax.swing.border.MatteBorder(null));
 
-        addi.setBackground(new java.awt.Color(0, 51, 51));
+        addi.setBackground(new java.awt.Color(0, 0, 0));
         addi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        id.setBackground(new java.awt.Color(153, 153, 153));
+        id.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        id.setForeground(new java.awt.Color(255, 255, 255));
+        id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        id.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(204, 204, 255)));
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        addi.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 270, 30));
+
+        jLabel5.setBackground(new java.awt.Color(51, 153, 255));
+        jLabel5.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("No:");
+        addi.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 30, 40));
 
         jLabel1.setBackground(new java.awt.Color(51, 153, 255));
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Address:");
-        addi.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 40));
+        addi.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, 40));
 
         jLabel2.setBackground(new java.awt.Color(51, 153, 255));
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("SqM:");
-        addi.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 30));
+        addi.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 30));
 
         jLabel3.setBackground(new java.awt.Color(51, 153, 255));
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("P. Code:");
-        addi.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+        jLabel3.setText("Postal:");
+        addi.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 30));
 
-        meter.setBackground(new java.awt.Color(0, 51, 51));
+        meter.setBackground(new java.awt.Color(153, 153, 153));
         meter.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         meter.setForeground(new java.awt.Color(255, 255, 255));
         meter.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -147,9 +169,9 @@ public void reset(){
                 meterActionPerformed(evt);
             }
         });
-        addi.add(meter, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 270, 30));
+        addi.add(meter, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 270, 30));
 
-        code.setBackground(new java.awt.Color(0, 51, 51));
+        code.setBackground(new java.awt.Color(153, 153, 153));
         code.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         code.setForeground(new java.awt.Color(255, 255, 255));
         code.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -159,14 +181,14 @@ public void reset(){
                 codeActionPerformed(evt);
             }
         });
-        addi.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 270, 30));
+        addi.add(code, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 270, 30));
 
         jLabel7.setBackground(new java.awt.Color(51, 153, 255));
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Price:");
-        addi.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 70, 20));
+        addi.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 70, 20));
 
         add.setBackground(new java.awt.Color(0, 0, 0));
         add.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -180,7 +202,7 @@ public void reset(){
         });
         addi.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 70, 30));
 
-        price.setBackground(new java.awt.Color(0, 51, 51));
+        price.setBackground(new java.awt.Color(153, 153, 153));
         price.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         price.setForeground(new java.awt.Color(255, 255, 255));
         price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -190,9 +212,9 @@ public void reset(){
                 priceActionPerformed(evt);
             }
         });
-        addi.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 138, 270, 30));
+        addi.add(price, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 270, 30));
 
-        address.setBackground(new java.awt.Color(0, 51, 51));
+        address.setBackground(new java.awt.Color(153, 153, 153));
         address.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         address.setForeground(new java.awt.Color(255, 255, 255));
         address.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -202,7 +224,7 @@ public void reset(){
                 addressActionPerformed(evt);
             }
         });
-        addi.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 270, 30));
+        addi.add(address, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 270, 30));
 
         up.setBackground(new java.awt.Color(0, 0, 0));
         up.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -230,7 +252,7 @@ public void reset(){
 
         jTabbedPane1.addTab("Property Information", addi);
 
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 640, 240));
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 640, 250));
 
         clear1.setBackground(new java.awt.Color(0, 0, 0));
         clear1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -283,7 +305,7 @@ public void reset(){
         clear2.setBackground(new java.awt.Color(0, 0, 0));
         clear2.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         clear2.setForeground(new java.awt.Color(255, 255, 255));
-        clear2.setText("Save");
+        clear2.setText("Add");
         clear2.setBorder(null);
         clear2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,11 +389,12 @@ public void reset(){
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
       DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-      String tbladd = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 0).toString();
-      String tblmeter = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 1).toString();
-      String tblcode = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 2).toString();
-      String tblprice = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 3).toString();
-      
+      String tblid = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 0).toString();
+      String tbladd = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 1).toString();
+      String tblmeter = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 2).toString();
+      String tblcode = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 3).toString();
+      String tblprice = (String) tblModel.getValueAt(jTable1.getSelectedRow(), 4).toString();
+      id.setText(tblid);
       address.setText(tbladd);
       meter.setText(tblmeter);
       code.setText(tblcode);
@@ -416,6 +439,7 @@ public void reset(){
     }//GEN-LAST:event_delActionPerformed
 
     private void clear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear1ActionPerformed
+        id.setText("");
         address.setText("");
         meter.setText("");
         code.setText("");
@@ -424,7 +448,8 @@ public void reset(){
 
     private void clear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear2ActionPerformed
         db_configuration dbc= new db_configuration();
-        dbc.insertData("INSERT INTO tbl_properties(Address,Meter,Postal,Price)VALUES('"+address.getText()+
+        dbc.insertData("INSERT INTO tbl_properties(No,Address,Meter,Postal,Price)VALUES('"+id.getText()+
+                "','"+address.getText()+
                 "','"+meter.getText()+"','"+code.getText()+"','"+price.getText()+"')");
         
     }//GEN-LAST:event_clear2ActionPerformed
@@ -432,9 +457,9 @@ public void reset(){
     private void clear3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear3ActionPerformed
         db_configuration dbc = new db_configuration();
         int num = dbc.updateData("UPDATE tbl_properties "
-                + "SET Meter = '"+meter.getText()+"', Postal='"+code.getText()+"', "
+                + "SET Address = '"+address.getText()+"',Meter ='"+meter.getText()+"', Postal='"+code.getText()+"', "
                         + "Price ='"+price.getText()+"'"
-                                + "WHERE Address = '"+address.getText()+"'");
+                                + "WHERE No = '"+id.getText()+"'");
        
         if(num == 0){
            
@@ -450,7 +475,7 @@ public void reset(){
     }//GEN-LAST:event_clear3ActionPerformed
 
     private void clear4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear4ActionPerformed
-       int rowIndex = jTable1.getSelectedRow();
+      int rowIndex = jTable1.getSelectedRow();
        if(rowIndex < 0){
            JOptionPane.showMessageDialog(null, "Please select a data first");
        }else{
@@ -459,8 +484,8 @@ public void reset(){
             String id = value.toString();
              int a=JOptionPane.showConfirmDialog(null,"Are you sure?");  
                     if(a==JOptionPane.YES_OPTION){  
-                            db_configuration dbc = new db_configuration();
-                            dbc.deleteData(jTable1.getSelectedRow());
+                            db_configuration dbc = new  db_configuration();
+                            dbc.deleteData(Integer.parseInt(id));
                 try {
                     fillTable();
                 } catch (SQLException ex) {
@@ -468,8 +493,14 @@ public void reset(){
                 }
                             reset();
                     }    
+       
+    
        }
     }//GEN-LAST:event_clear4ActionPerformed
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
     
     /**
      * @param args the command line arguments
@@ -491,10 +522,12 @@ public void reset(){
     private javax.swing.JButton clear4;
     private javax.swing.JTextField code;
     private javax.swing.JButton del;
+    private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

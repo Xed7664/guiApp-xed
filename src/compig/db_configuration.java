@@ -75,7 +75,7 @@ public class db_configuration {
       }
       public void deleteData(int id) {
     try {
-        PreparedStatement stmt = connection.prepareStatement("DELETE FROM tbl_properties WHERE Address = ?");
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM tbl_properties WHERE No= ?");
         stmt.setInt(1, id);
         int rowsDeleted = stmt.executeUpdate();
         if (rowsDeleted > 0) {
